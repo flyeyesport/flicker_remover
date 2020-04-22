@@ -54,7 +54,7 @@ where:
 * `<fps>` is a speed (frames per second) at which a movie or frames were recorded.
 
 ## Output
-The program genarates and saves 4 movies in the directory from which it was run:
+The program genarates and saves 4 movies in the current directory:
 * orig.avi - original movie without any changes
 * diff.avi - movie with only differential frames, like with `<execution mode>` set to 2
 * flicker_free.avi - movie with flicker removal applied
