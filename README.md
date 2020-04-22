@@ -16,8 +16,9 @@ mkdir build && cd build && cmake .. && make
 ```
 
 ## Running:
-To run and test you can use your own movies or sets of frames or our sets of frames and a movie used in our paper. **Important:** all movies and frames must be in 1-channel, 800x600 format. You can download our frames and a movie (examples 1-3 from our paper) from here: [example 1](https://www.google.com), 
-[example 2](https://www.google.com), [example 3](https://www.google.com).
+To run and test you can use your own movies or sets of frames or our sets of frames and a movie used in our paper. **Important:** all movies and frames must be in 1-channel, 800x600 format. You can download our frames and a movie (examples 1-3 from our paper) from here: [example 1](https://1drv.ms/u/s!ApYchjX9LRlxjxyaUNrckiq6Orn4?e=VeD1Tc),
+[example 2](https://1drv.ms/u/s!ApYchjX9LRlxjx30jepAl6u24O78?e=qFgtY5),
+[example 3](https://1drv.ms/u/s!ApYchjX9LRlxjx7jSC62KXkUqvpe?e=pPVpqS).
 
 
 ## Examples:
