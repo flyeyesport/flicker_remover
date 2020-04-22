@@ -16,7 +16,7 @@ mkdir build && cd build && cmake .. && make
 ```
 
 ## Running:
-To run and test you can use your own movies or sets of frames or our sets of frames and a movie used in our paper. You can download our frames and a movie (examples 1-3 from our paper) from here: [example 1](https://www.google.com), 
+To run and test you can use your own movies or sets of frames or our sets of frames and a movie used in our paper. **Important:** all movies and frames must be in 1-channel, 800x600 format. You can download our frames and a movie (examples 1-3 from our paper) from here: [example 1](https://www.google.com), 
 [example 2](https://www.google.com), [example 3](https://www.google.com).
 
 
@@ -35,7 +35,31 @@ For example 2 run:
 
 For example 3 run:
 ```
-./flicker_remover example_3/source_movie/source_movie.avi 4 190
+./flicker_remover example_3/source_movie/source_movie.avi 4 150
 ```
 For example 3 change value of `second_neighbours_limit` constant in the code, recompile, run and see the difference.
 
+## Commandline parameters
+Usage: 
+```
+./flicker_remover <path to directory with jpeg images | movie filename> <execution mode> <fps>
+```
+where:
+* `<path to directory with jpeg images | movie filename>` is a directory with frames from the movie (it can be jpeg, png or other format that can be read by opencv) or a path to the movie in format that can be read by opencv.
+* `<execution mode>` is a number from 1 to 4:
+  + 1 - the program will not use flicker removal algorithm it will output only a differential images calculated for pairs of consecutive frames,
+  + 2 - the same as 1, but all values of pixels of the differential images not equal to 0 will be set to 255,
+  + 3 - flicker removal algorithm run on CPU,
+  + 4 - flicker removal algorithm run on GPU (OpenCL).
+* `<fps>` is a speed (frames per second) at which a movie or frames were recorded.
+
+## Output
+The program genarates and saves 4 movies in the directory from which it was run:
+* orig.avi - original movie without any changes
+* diff.avi - movie with only differential frames, like with `<execution mode>` set to 2
+* flicker_free.avi - movie with flicker removal applied
+* combined.avi - movie with 4 combined movies:
+  + original, unchanged
+  + with flicker removal applied
+  + differential images from frames with removed flickering
+  + differential images from frames with removed flickering with second level filter applied
