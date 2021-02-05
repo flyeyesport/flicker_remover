@@ -1,5 +1,5 @@
 # flicker_remover
-Source code for "Realtime flicker removal for fast video streaming" paper (to be published soon).
+Source code for "[Realtime flicker removal for fast video streaming](https://link.springer.com/article/10.1007/s11042-020-10385-8)" paper.
 
 We use it in quite a complex system as one of the first filters in online stream processing. The system processes 150-200fps and the filter alone is much faster.
 We detect movement in streams by calculating differential images between consecutive frames. Streams are captured in places with 
